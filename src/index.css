@@ -1,13 +1,95 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: grey;
+}
+.bb-1 {
+  border-bottom: 1px solid rgb(154, 154, 154);
+}
+#myPlot {
+  background-color: #009ad3;
+}
+.color-success {
+  color: #2ca826;
+}
+.color-danger {
+  color: rgb(200 48 48);
+}
+.bar {
+  border: 1px solid rgb(154, 154, 154);
+  border-radius: 10px;
+  background-color: #f4f4f4;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+tr > td:first-child,
+tr > td:nth-child(2) {
+  color: #009ad3;
+}
+tr > td:last-child {
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+tr {
+  background-color: white;
+}
+
+.progressCircle {
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  transform: rotate(-90deg) rotateX(180deg);
+}
+
+.progressCircle circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 2s ease;
+  stroke: #009ad3;
+  stroke-width: 12px;
+}
+
+.progressCircle .bar {
+  stroke: black;
+}
+
+.progressdiv {
+  position: relative;
+}
+
+.progressdiv:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 32px;
+  transform: translate(-50%, -50%);
+  content: attr(data-percent) " %";
+}
+.pieSales {
+  border-radius: 10px;
+  background: #1dc231;
+  color: white;
+  padding: 1px 4px;
+  margin: 5px 0;
+  height: 10px;
+}
+
+#pieProgressBar {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.h-100 {
+  height: 100%;
+}
+@media (max-width: 560px) {
+  #showData {
+    overflow: auto;
+  }
+}
+.progress{
+  background-color: #009ad3!important;
 }
