@@ -1,8 +1,9 @@
-import React from 'react';
-import { config } from '../configurator/configurator'
-const tableData = config.widgets.filter(x => x.type === 'table').flat()[0].dataSource
+import React, { useContext } from 'react';
+import { MyContext } from '../App';
 
 export default function Table() {
+    const { text } = useContext(MyContext);
+    const tableData = text.filter(x => x.type === 'table')[0].dataSource
     // get table column
     const column = Object.keys(tableData[0]);
     // get table heading data

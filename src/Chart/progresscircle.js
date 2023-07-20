@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { MyContext, generateRandomArray } from '../App';
 import { config } from '../configurator/configurator';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-const numeric = config.widgets.filter(x => x.type === 'numeric').flat()[0]
-const percentage = numeric.dataSource;
 export default function ProgressCircle() {
+    const { text } = useContext(MyContext);
+    const numeric = text.filter(x => x.type === 'numeric')[0]
+    const percentage = generateRandomArray(numeric.dataSource);
     return (
         <div className='border my-3'>
             <h2 className='text-center py-4'>
