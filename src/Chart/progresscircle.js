@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { MyContext, generateRandomArray } from '../App';
-import { config } from '../configurator/configurator';
+
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 export default function ProgressCircle() {

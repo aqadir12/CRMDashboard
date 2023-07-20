@@ -9,8 +9,8 @@ export default function Table() {
     // get table heading data
     const ThData = () => {
 
-        return column.map((data) => {
-            return <th key={data}>{data}</th>
+        return column.map((data, i) => {
+            return <th key={i}>{data}</th>
         })
     }
     // get table row data

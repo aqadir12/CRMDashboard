@@ -11,8 +11,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-
-import { config } from '../configurator/configurator'
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -52,19 +50,19 @@ export default function Linechart() {
   };
   return (<div className='border my-3'>
     <Line options={options} data={data} />;
-    <div id="textLine" class="d-flex justify-content-around my-3">
-      <div class="text-center">
-        <h6 class="">NUMBER OF INVOICES</h6>
-        <h6 class="fw-bold invoices">75</h6>
+    <div id="textLine" className="d-flex justify-content-around my-3">
+      <div className="text-center">
+        <h6 className="">NUMBER OF INVOICES</h6>
+        <h6 className="fw-bold invoices">75</h6>
       </div>
 
-      <div class="text-center mx-2">
-        <h6 class="">SALES</h6>
-        <h6 class="fw-bold sales">$5649</h6>
+      <div className="text-center mx-2">
+        <h6 className="">SALES</h6>
+        <h6 className="fw-bold sales">$5649</h6>
       </div>
-      <div class="text-center">
-        <h6 class="">COGS</h6>
-        <h6 class="fw-bold cogs">$2004</h6>
+      <div className="text-center">
+        <h6 className="">COGS</h6>
+        <h6 className="fw-bold cogs">$2004</h6>
       </div>
     </div>
   </div>)

@@ -6,8 +6,7 @@ import Table from './Chart/table';
 import Nav from './Nav/nav';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { config } from './configurator/configurator';
-const numeric = config.widgets.filter(x => x.type === 'numeric').flat()[0]
+// import { config } from './configurator/configurator';
 
 export const MyContext = createContext("");
 
@@ -27,7 +26,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   // const url = "https://my.api.mockaroo.com/appconfig.json?key=c9275ec0";
   const url = "https://api.npoint.io/cae811cd268f8663002b";
-
+  
   const fetchData = async () => {
     try {
       await fetch(url).then(res => res.json()).then(data => setText(data));
@@ -37,12 +36,13 @@ export default function App() {
       console.log("error", error);
     }
   };
-
+  
   useEffect(() => {
     fetchData();
   }, [])
+  const numeric = text.filter(x => x.type === 'numeric')[0]
 
-
+  const percentage = 10;
   function renderSwitchs(param, i) {
     switch (param) {
       case 'line':
@@ -140,10 +140,10 @@ export default function App() {
                 <div className="">
                   <div className="d-flex align-items-center">
                     <div className="w-100 bar">
-                      <span style={{ width: numeric.dataSource + '%' }} className="progress"></span>
+                      <span style={{ width:percentage + '%' }} className="progress"></span>
                     </div>
 
-                    <span className="fw-bolder ms-3" >{numeric.dataSource}%</span>
+                    <span className="fw-bolder ms-3" >{percentage}%</span>
                   </div>
                   <p className="color-success m-0">Complete your profile</p>
                 </div>
